@@ -1,0 +1,60 @@
+---
+SMSCs:
+  - Name: cluster01-smsc01
+    IP: 10.1.20.50
+    Port: 2775
+    BindPassword: passwd1
+    BindSystemID: smsc-01-01
+  - Name: cluster01-smsc02
+    IP: 10.1.20.55
+    Port: 2775
+    BindPassword: passwd1
+    BindSystemID: smsc-02-02
+  - Name: cluster02-smsc01
+    IP: 10.1.30.50
+    Port: 2775
+    BindPassword: passwd2
+    BindSystemID: smsc-02-01
+  - Name: cluster02-smsc02
+    IP: 10.1.30.55
+    Port: 2775
+    BindPassword: passwd2
+    BindSystemID: smsc-01-02
+ESMEs:
+  - Name: rcs01-tp01
+    IP: 10.1.50.100
+    Port: 2775
+    BindSystemID: rcs01-tp01
+    BindSystemType: rcs
+  - Name: rcs01-tp02
+    IP: 10.1.50.105
+    Port: 2775
+    BindSystemID: rcs01-tp02
+    BindSystemType: rcs
+  - Name: rcs02-tp01
+    IP: 10.1.50.110
+    Port: 2775
+    BindSystemID: rcs02-tp01
+    BindSystemType: rcs
+  - Name: rcs02-tp02
+    IP: 10.1.50.115
+    Port: 2775
+    BindSystemID: rcs02-tp02
+    BindSystemType: rcs
+TransceiverBinds:
+  - ESME: rcs01-tp01
+    SMSC: cluster01-smsc01
+    #  - ESME: rcs01-tp01
+    #    SMSC: cluster02-vs
+  - ESME: rcs01-tp02
+    SMSC: cluster01-smsc02
+    #  - ESME: rcs01-tp02
+    #    SMSC: cluster02-vs
+  - ESME: rcs02-tp01
+    SMSC: cluster02-smsc01
+    #  - ESME: rcs02-tp01
+    #    SMSC: cluster02-vs
+  - ESME: rcs02-tp02
+    SMSC: cluster02-smsc02
+    #  - ESME: rcs02-tp02
+    # 
