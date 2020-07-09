@@ -6,12 +6,13 @@ This procedure will provide you with step by step instructions for creating a SM
 
 <br/>  
 
-
-
 ### Prerequisites/Requirements  
 
-Recommend BIG-IP v13.1  
-Good understanding of BIG-IP Message Routing Framework (MRF); [MRF Primer can be found here](reference_documents/MRF_Explained.docx)  
+- BIG-IP v13.1.3.4  
+- Good understanding of BIG-IP Message Routing Framework (MRF); [Link to MRF Primer](reference_documents/MRF_Explained.docx)  
+- Two Ubuntu VM's v16.04  
+
+<br/>  
 
 ### Technology Overview  
 
