@@ -2,7 +2,7 @@
 
 ### Purpose of this Guide 
 
-This procedure will provide you with step by step instructions for creating a SMPP v3.4 environment (ESME's and SCMS's) and configuring BIG-IP as a message routing proxy for SMPP v3.4.  In this configuration we will configure four conceptual SMSC's running on a single SMSC host and 4 conceptual ESME's running on a single EMSE host.  The BIG-IP will use generic MRF and iRules to proxy traffic between ESME's and SMSC's.  The iRule also supports short message code routing from SMSC to EMSE's.  The logic for this solution is completely based on generic MRF and iRules.  If you wish to expand the functionality beyond the scope of what is included here you will have to modify the iRules to support that functionality.
+This procedure will provide you with step by step instructions for creating a SMPP v3.4 environment (ESME's and SCMS's) and configuring BIG-IP as a message routing proxy for SMPP v3.4.  In this configuration we will configure four simulated SMSC's running on a single SMSC host and 4 simulated ESME's running on a single EMSE host.  The BIG-IP will use generic MRF and iRules to proxy traffic between ESME's and SMSC's.  The iRule also supports short message code routing from SMSC to EMSE's.  The logic for this solution is completely based on generic MRF and iRules.  If you wish to expand the functionality beyond the scope of what is included here you will have to modify the iRules to support that functionality.
 
 <br/>  
 
@@ -10,7 +10,8 @@ This procedure will provide you with step by step instructions for creating a SM
 
 ### Prerequisites/Requirements  
 
-<br/>  
+Recommend BIG-IP v13.1
+Good understanding of MRF (MRF primer can be found here)
 
 ### Technology Overview  
 
@@ -74,6 +75,29 @@ The BIG-IP can either use per-message load-balancing, or via additional iRules, 
 
 
 
+<br/>   
+
+### Solution Environment  
+
+The solution simulates up to four ESMEs, organized into two clusters, and up to four SMSCs, organized into two clusters.  The simulated ESME's are running on a single Ubuntu server called ESME-Host.  The simulated SMSC's are running on a single ubunut server called SMSC-Host.  The ESME clusters are called “rcs” clusters.  This is because the PoC upon which this solution was built routed messages between Rich Communications Servers (RCS) acting as ESMEs toward several geographically distinct groups of SMSCs.  
+
+<br/>   
+
+![Physical Layout](illustrations/SMPP_Solution_Physical_Layout.png)  
+
+<br/>   
+
+
+![Simulated Layout](illustrations/SMPP_Solution_Simulated_Layout.png)  
+
+<br/>   
+
+
+If an ESME sends an SMPP message to a transport bound to the top Virtual Server, then it is delivered to the cluster01 SMSC pool.  If an ESME sends an SMPP message to a transport bound to the bottom Virtual Server, then it is delivered to the cluster02 SMSC pool.
+
+If an SMSC sends a submit-sm message with the destination_addr field set to one of the two pre-defined short codes, then the message is routed to the “pool” of ESMEs bound to that short code (e.g., if the destination_addr field is 33433, it will be delivered to one of the ESMEs in rcs02).  This is a pseudo-pool, because BIG-IP cannot create a pool with client peers.  The pool is defined in a data-group.
+
+This demo utilizes an SMPP test harness called smppth.  It is open-source and is hosted in a github repository.  smppth is designed for building custom test harnesses but provides a default application – smpp-test-harness – which this solution uses.  smpp-test-harness provides a terminal UI.  One instance is run on the smscs host instance and manages all of the SMSC agents.  Another instance is run on the esmes host instance and manages all of the ESME agents.
 
 
 
