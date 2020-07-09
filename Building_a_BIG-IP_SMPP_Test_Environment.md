@@ -103,6 +103,6 @@ This demo utilizes an SMPP test harness called smppth.  It is open-source and is
 
 <br/>   
 
-## Next Step  
+### Next Step  
 [Building out the SMSC and EMSE Servers](procedures/Building_out_SMSC_and_ESME.md)
 

@@ -1,4 +1,148 @@
 ( Previous Step: [Building a BIG-IP SMPP Test Environment](Building_a_BIG-IP_SMPP_Test_Environment.md) )  
 
-Building_a_BIG-IP_SMPP_Test_Environment.md
+### Summary  
+
+In this step you will perform the following:
+
+1.  Build your Ubuntu VM's that we server as the ESME and SMSC Host servers  
+2.  Configure the SMSC host server and load the necessary libraries  
+3.  Configure the EMSE host server and load the necessary libraries
+
+<br/>   
+
+### Preparing the Ubuntu Server
+
+1. Create two Ubuntu VM's using v16.04 to act as the EMSE host and the SMSC host.  The SMSC host server should have a minimum of three NICs (mgmt, smsc-net1, and smsc-net2).  The ESME host server should have a minimum of two NICs (mgmt and esme-net1)
+
+2. Make sure you are running Ubuntu 16.04 on your Kube nodes  
+```lsb_release -a```
+
+3. Update Ubuntu  
+```apt-get update -y```  
+```apt-get upgrade -y```
+
+4. Disable firewall ubuntu  
+```ufw disable```
+
+5. selinux is not installed by default
+```sestatus``` should fail  
+
+6. NTP installed by default  
+Verify NTP is in sync  
+```timedatectl```  
+
+7.  The SMPP library that we will use is built in the `go` language.  We need to install `go` v1.14.4  
+    ```
+    cd /tmp
+    ```  
+    ```
+    wget https://golang.org/dl/go1.14.4.linux-amd64.tar.gz
+    ```  
+    ```
+    sudo tar xzvf go1.14.4.linux-amd64.tar.gz -C /usr/local
+    ```  
+8. Modify the user profile to add the `GOPATH`  
+    ```
+    vi $HOME/.profile
+    ```  
+    Append the following to the end of the file  
+    ```
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    ```  
+9.  Source the modified user profile  
+    ```
+    source ~/.profile
+    ```  
+10.  Verify the installed `go` version is correct  
+
+        ```
+        @SMSC-Host:~$ go version
+        go version go1.14.4 linux/amd64
+        ```  
+
+11.  Download the necessary libraries and repositories from `git` using `go`  
+        ```
+        go get github.com/gdamore/tcell
+        ```  
+        ```
+        go get github.com/rivo/tview
+        ```  
+        ```
+        go get github.com/blorticus/smpp-go
+        ```  
+        ```
+        go get github.com/blorticus/smppth
+        ```  
+12.  Verify that the SMPP Test Harness `smppth` is working properly  
+        ```
+        cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+        ```  
+        ```
+        @SMSC-Host:~/go/src/github.com/blorticus/smppth/apps/smpp-test-harness$ go run .
+        smpp-test-harness run esmes|smscs <config_yaml_file>
+        exit status 1
+        ```  
+
+
+<br/>  
+
+### Building out the SMSC Host server  
+
+1.  Configure the `/etc/network/interfaces` file to match this environment.  ens160 is the `mgmt` interface, ens192 will be used for `smsc-net1`, and ens224 will be used for `smsc-net2`  
+
+    __Note:__  We are using secondary IP addresses for the SMSC Simulated servers.  We will bind the Simulated SMSC servers to the secondary IP addresses.  
+
+    ```
+    @smsc-host:~$ cat /etc/network/interfaces
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+
+    source /etc/network/interfaces.d/*
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+
+    # The primary network interface
+    auto ens160
+    iface ens160 inet static
+    address 192.168.2.53
+    netmask 255.255.255.0
+    gateway 192.168.2.1
+    dns-nameservers 8.8.8.8
+
+    auto ens192
+    iface ens192 inet static
+    address 10.1.20.49
+    netmask 255.255.255.0
+
+    auto ens192:1
+    iface ens192:1 inet static
+    address 10.1.20.50
+    netmask 255.255.255.0
+
+    auto ens192:2
+    iface ens192:2 inet static
+    address 10.1.20.55
+    netmask 255.255.255.0
+
+    auto ens224
+    iface ens224 inet static
+    address 10.1.30.49
+    netmask 255.255.255.0
+
+    auto ens224:1
+    iface ens224:1 inet static
+    address 10.1.30.50
+    netmask 255.255.255.0
+
+    auto ens224:2
+    iface ens224:2 inet static
+    address 10.1.30.55
+    netmask 255.255.255.0
+    ```
+2.  The SMPP library that we will use is built in the `go` language
+
 
