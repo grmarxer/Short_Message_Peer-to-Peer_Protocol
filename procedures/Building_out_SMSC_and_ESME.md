@@ -1,4 +1,4 @@
-( Previous Step: [Building a BIG-IP SMPP Test Environment](Building_a_BIG-IP_SMPP_Test_Environment.md) )  
+( Previous Step: [Building a BIG-IP SMPP Test Environment](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/Building_a_BIG-IP_SMPP_Test_Environment.md) )  
 
 ### Summary  
 
