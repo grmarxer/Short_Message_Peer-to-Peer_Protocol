@@ -101,9 +101,8 @@ If an SMSC sends a submit-sm message with the destination_addr field set to one 
 This demo utilizes an SMPP test harness called smppth.  It is open-source and is hosted in a github repository.  smppth is designed for building custom test harnesses but provides a default application – smpp-test-harness – which this solution uses.  smpp-test-harness provides a terminal UI.  One instance is run on the smscs host instance and manages all of the SMSC agents.  Another instance is run on the esmes host instance and manages all of the ESME agents.
 
 
+<br/>   
 
-
-
-
-
+## Next Step  
+[Building out the SMSC and EMSE Servers](procedures/Building_out_SMSC_and_ESME.md)
 
