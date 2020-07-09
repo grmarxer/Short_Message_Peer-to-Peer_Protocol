@@ -10,8 +10,8 @@ This procedure will provide you with step by step instructions for creating a SM
 
 ### Prerequisites/Requirements  
 
-Recommend BIG-IP v13.1
-Good understanding of MRF (MRF primer can be found here)
+Recommend BIG-IP v13.1  
+Good understanding of BIG-IP Message Routing Framework (MRF); [MRF Primer can be found here](reference_documents/MRF_Explained.docx)  
 
 ### Technology Overview  
 
