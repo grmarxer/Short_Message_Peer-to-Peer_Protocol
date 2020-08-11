@@ -1,4 +1,3 @@
-ltm rule smpp-severside {
 when RULE_INIT {
     set static::short_code_route_pointer 0
 }
