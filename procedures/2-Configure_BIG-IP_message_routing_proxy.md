@@ -26,28 +26,21 @@
     tmsh create ltm data-group  internal smpp-config-elements { records add { asserted-system-type { data bigip }  bigip-system-id { data bigip01 } bigip-system-id-password { data test } } type string }
     tmsh create ltm data-group internal smpp-shortcode-routing { records add { 11211 { data 10.1.50.100%0:2775,10.1.50.105%0:2775 } 33433 { data 10.1.50.110%0:2775,10.1.50.115%0:2775 } default { data 10.1.50.100%0:2775,10.1.50.105%0:2775 } } type string }
     ```  
-4.  Create the following SMPP iRules using the `load sys config from-terminal merge` command.  __DO NOT__ forget the merge or you will be sorry.  Although only a single iRule will be attached to the VIP, all of the following iRules are required.  They will be called from the `smpp-clientside` iRule.  
+4.  Create the following SMPP iRules using the BIG-IP GUI.  __DO NOT__ change the iRule names or you will be sorry.  
 
-       ```
-       tmsh
-       ```
-       ```
-       load sys config from-terminal merge
-       ```  
-
-       - Create the `config-variables-smsc-cluster-01` iRule with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
+    - Create the `config-variables-smsc-cluster-01` iRule with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
 
 
-       - Create the `config-variables-smsc-cluster-02` iRule with the following contents [config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-02.tcl)  
+    - Create the `config-variables-smsc-cluster-02` iRule with the following contents [config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-02.tcl)  
 
 
-       - Create the `logging` iRule with the following contents [logging](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/logging.tcl)  
+    - Create the `logging` iRule with the following contents [logging](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/logging.tcl)  
 
 
-       - Create the `smpp-clientside` iRule with the following contents [smpp-clientside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-clientside.tcl)  
+    - Create the `smpp-clientside` iRule with the following contents [smpp-clientside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-clientside.tcl)  
 
 
-       - Create the `smpp-serverside` iRule with the following contents [smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-serverside.tcl)  
+    - Create the `smpp-serverside` iRule with the following contents [smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-serverside.tcl)  
   
 
 5.  Create the SMSC Pools  
