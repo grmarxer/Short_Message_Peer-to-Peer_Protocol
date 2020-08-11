@@ -38,16 +38,16 @@
        - Create the `config-variables-smsc-cluster-01` iRule with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
 
 
-        - Create the `config-variables-smsc-cluster-02` iRule with the following contents [config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-02.tcl)  
+       - Create the `config-variables-smsc-cluster-02` iRule with the following contents [config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-02.tcl)  
 
 
-        - Create the `logging` iRule with the following contents [logging](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/logging.tcl)  
+       - Create the `logging` iRule with the following contents [logging](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/logging.tcl)  
 
 
-        - Create the `smpp-clientside` iRule with the following contents [smpp-clientside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-clientside.tcl)  
+       - Create the `smpp-clientside` iRule with the following contents [smpp-clientside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-clientside.tcl)  
 
 
-        - Create the `smpp-serverside` iRule with the following contents [smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-serverside.tcl)  
+       - Create the `smpp-serverside` iRule with the following contents [smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-serverside.tcl)  
   
 
 5.  Create the SMSC Pools  
