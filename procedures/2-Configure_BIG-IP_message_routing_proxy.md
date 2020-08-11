@@ -35,7 +35,7 @@
         load sys config from-terminal merge
         ```  
 
-        - Create the `config-variables-smsc-cluster-01` iRule with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
+       - Create the `config-variables-smsc-cluster-01` iRule with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
 
 
         - Create the `config-variables-smsc-cluster-02` iRule with the following contents [config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-02.tcl)  
