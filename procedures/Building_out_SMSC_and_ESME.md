@@ -144,7 +144,7 @@ Verify NTP is in sync
     address 10.1.30.55
     netmask 255.255.255.0
     ```
-2.  Create the `smscs.yaml` file that will be used to activate the `smppth` test harness.  [smscs.yaml file](yaml_files/smscs.yaml)  
+2.  Create the `smscs.yaml` file that will be used to activate the `smppth` test harness.  [smscs.yaml file](Short_Message_Peer-to-Peer_Protocol/yaml_files/smscs.yaml)  
     ```
     vi $HOME/smscs.yaml
     ```  
