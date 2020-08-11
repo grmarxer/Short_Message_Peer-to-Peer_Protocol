@@ -4,7 +4,7 @@
 
 In this step you will perform the following:
 
-1.  Build your Ubuntu VM's that we server as the ESME and SMSC Host servers  
+1.  Build your Ubuntu VM's that will serve as the ESME and SMSC Host servers  
 2.  Configure the SMSC host server and load the necessary libraries  
 3.  Configure the EMSE host server and load the necessary libraries
 

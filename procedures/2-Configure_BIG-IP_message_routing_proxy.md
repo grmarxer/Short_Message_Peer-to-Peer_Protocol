@@ -56,7 +56,19 @@
     tmsh create ltm message-routing generic router router-toward-smsc-cluster01 routes replace-all-with { route-smsc-cluster01 }
     tmsh create ltm message-routing generic router router-toward-smsc-cluster02 routes replace-all-with { route-smsc-cluster02 }
     ```  
-10.  Create the SMPP iRule
+10.  Create the following SMPP iRules.  Although only a single iRule will be attached to the VIP, all of the following iRules are required.  They will be called from the `smpp-clientside` iRule.
+- Create the `irule_config-variables-smsc-cluster-01` with the following contents [irule_config-variables-smsc-cluster-01](iRules/irule_config-variables-smsc-cluster-01.tcl)
+```
+tmsh create ltm rule irule_config-variables-smsc-cluster-01
+tmsh create ltm rule irule_config-variables-smsc-cluster-02
+tmsh create ltm rule irule_logging
+tmsh create ltm rule irule_smpp-clientside
+tmsh create ltm rule irule_smpp-serverside
+```  
+
+
+
+
 
 
 
