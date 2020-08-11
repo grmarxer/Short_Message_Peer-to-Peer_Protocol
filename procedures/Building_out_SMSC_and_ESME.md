@@ -106,7 +106,7 @@ Verify NTP is in sync
     iface lo inet loopback
 
     # The primary network interface
-    # Interface ens160 is the server's management address
+    # Interface ens160 is the server's management interface
     auto ens160
     iface ens160 inet static
     address 192.168.2.53
@@ -202,7 +202,7 @@ Verify NTP is in sync
     iface lo inet loopback
 
     # The primary network interface
-    # Interface ens160 is the server's management address
+    # Interface ens160 is the server's management interface
     auto ens160
     iface ens160 inet static
     address 192.168.2.54
@@ -255,4 +255,19 @@ Verify NTP is in sync
         ```
         vi $HOME/esme-bind-to-bigip-VIPs.yaml
         ```  
+    
+3.  Start the EMSE RCS Clients
+    ```
+    cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+    ```  
+    ```
+    go run . run smscs $HOME/esme-bind-through-bigip-passthru.yaml
+    ```  
+
+    #### - or -  
+
+    ```
+    go run . run smscs $HOME/esme-bind-to-bigip-VIPs.yaml
+    ```   
+
     
