@@ -248,3 +248,11 @@ Verify NTP is in sync
         vi $HOME/esme-bind-through-bigip-passthru.yaml
         ```  
     
+    - `esme-bind-to-bigip-VIPs.yaml` is configured so the ESME's bind to BIG-IP VIP's, in this example there are two BIG-IP VIPs `vs-smpp-toward-smsc-cluster01` and `vs-smpp-toward-smsc-cluster02`.  The BIG-IP configuration will be provided in a later procedure.  In this case the ESME's and SMSC's will use BIG-IP as a message routing proxy for SMPP v3.4.  
+
+        [Link to esme-bind-to-bigip-VIPs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/esme-bind-to-bigip-VIPs.yaml)  
+        
+        ```
+        vi $HOME/esme-bind-to-bigip-VIPs.yaml
+        ```  
+    
