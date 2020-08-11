@@ -261,13 +261,13 @@ Verify NTP is in sync
     cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
     ```  
     ```
-    go run . run smscs $HOME/esme-bind-through-bigip-passthru.yaml
+    go run . run esmes $HOME/esme-bind-through-bigip-passthru.yaml
     ```  
 
     ### - or -  
 
     ```
-    go run . run smscs $HOME/esme-bind-to-bigip-VIPs.yaml
+    go run . run esmes $HOME/esme-bind-to-bigip-VIPs.yaml
     ```   
 
 
