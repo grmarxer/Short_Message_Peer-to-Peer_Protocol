@@ -1,4 +1,4 @@
-( Previous Step: [tbd](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/Building_a_BIG-IP_SMPP_Test_Environment.md) )  
+( Previous Step: [Building out the SMSC and EMSE Servers](procedures/1-Building_out_SMSC_and_ESME.md) )  
 
 ### Summary  
 

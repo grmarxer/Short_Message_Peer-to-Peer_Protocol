@@ -270,3 +270,8 @@ Verify NTP is in sync
     go run . run smscs $HOME/esme-bind-to-bigip-VIPs.yaml
     ```   
 
+
+<br/>   
+
+### Next Step  
+[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](procedures/2-Configure_BIG-IP_message_routing_proxy.md)
