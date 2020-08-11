@@ -28,12 +28,12 @@
     ```  
 4.  Create the following SMPP iRules using the `load sys config from-terminal merge` command.  __DO NOT__ forget the merge or you will be sorry.  Although only a single iRule will be attached to the VIP, all of the following iRules are required.  They will be called from the `smpp-clientside` iRule.  
 
-        ```
-        tmsh
-        ```
-        ```
-        load sys config from-terminal merge
-        ```  
+       ```
+       tmsh
+       ```
+       ```
+       load sys config from-terminal merge
+       ```  
 
        - Create the `config-variables-smsc-cluster-01` iRule with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
 
