@@ -25,6 +25,7 @@
     ```
     tmsh create ltm data-group  internal smpp-config-elements { records add { asserted-system-type { data bigip }  bigip-system-id { data bigip01 } bigip-system-id-password { data test } } type string }
     tmsh create ltm data-group internal smpp-shortcode-routing { records add { 11211 { data 10.1.50.100%0:2775,10.1.50.105%0:2775 } 33433 { data 10.1.50.110%0:2775,10.1.50.115%0:2775 } default { data 10.1.50.100%0:2775,10.1.50.105%0:2775 } } type string }
+    tmsh save sys config
     ```  
 4.  Create the following SMPP iRules using the BIG-IP GUI.  __DO NOT__ change the iRule names or you will be sorry.  
 
