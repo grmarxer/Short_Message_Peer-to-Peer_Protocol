@@ -1,4 +1,3 @@
-ltm rule logging {
 ##
 ## Simple Message Peer-to-Peer (SMPP) system_type based routing and bind management
 ##
