@@ -57,27 +57,27 @@
     tmsh create ltm message-routing generic router router-toward-smsc-cluster02 routes replace-all-with { route-smsc-cluster02 }
     ```  
 10.  Create the following SMPP iRules.  Although only a single iRule will be attached to the VIP, all of the following iRules are required.  They will be called from the `smpp-clientside` iRule.
-- Create the `irule_config-variables-smsc-cluster-01` with the following contents [irule_config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/irule_config-variables-smsc-cluster-01.tcl)
+- Create the `config-variables-smsc-cluster-01` with the following contents [config-variables-smsc-cluster-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-01.tcl)
     ```
     tmsh create ltm rule irule_config-variables-smsc-cluster-01 { }
     ```  
 
-- Create the `irule_config-variables-smsc-cluster-02` with the following contents [irule_config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/irule_config-variables-smsc-cluster-02.tcl)  
+- Create the `config-variables-smsc-cluster-02` with the following contents [config-variables-smsc-cluster-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/config-variables-smsc-cluster-02.tcl)  
     ```
     tmsh create ltm rule irule_config-variables-smsc-cluster-02 { }
     ```  
 
-- Create the `irule_logging` with the following contents [irule_logging](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/irule_logging.tcl)  
+- Create the `logging` with the following contents [logging](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/logging.tcl)  
     ```
     tmsh create ltm rule irule_logging { }
     ```  
 
-- Create the `irule_smpp-clientside` with the following contents [irule_smpp-clientside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/irule_smpp-clientside.tcl)  
+- Create the `smpp-clientside` with the following contents [smpp-clientside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-clientside.tcl)  
     ```
     tmsh create ltm rule irule_smpp-clientside { }
     ```  
 
-- Create the `irule_smpp-serverside` with the following contents [irule_smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/irule_smpp-serverside.tcl)  
+- Create the `smpp-serverside` with the following contents [smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-serverside.tcl)  
     ```
     tmsh create ltm rule irule_smpp-serverside { }
     ```    

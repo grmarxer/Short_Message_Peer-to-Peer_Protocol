@@ -1,3 +1,4 @@
+ltm rule smpp-clientside {
 when RULE_INIT {
     set static::smpp_config_elements_dg "smpp-config-elements"
 }
@@ -41,17 +42,17 @@ when CLIENT_DATA {
             set is_request_msg 0
         }
 
-        call logging::debug "is_request_msg = ($is_request_msg); command_length = ($command_length); command_id = ($command_id); command_name = ([call logging::smpp_command_id_to_name $command_id]); command_status = ($command_status); sequence_number = ($sequence_number)" 
+        call logging::debug "is_request_msg = ($is_request_msg); command_length = ($command_length); command_id = ($command_id); command_name = ([call logging::smpp_command_id_to_name $command_id]); command_status = ($command_status); sequence_number = ($sequence_number)"
 
         if { $command_length > [string length $incoming_buf] } {
             # not enough octets in collected buf for length of next PDU, so its an incomplete PDU
-            call logging::debug "Not enough octets yet collected for complete PDU"  
+            call logging::debug "Not enough octets yet collected for complete PDU"
             return
         }
 
         switch $command_id {
             1 - 2 - 9 {                             ;# bind_* command
-                call logging::debug "Received bind_* command"  
+                call logging::debug "Received bind_* command"
 
                 if { $peer_state eq "waiting_for_bind" } {
                     # send bind response
@@ -62,8 +63,8 @@ when CLIENT_DATA {
                     # +1 is for null octet after system_id
                     set response_message_length [expr { 16 + [string length $my_system_id] + 1 }]
 
-                    call logging::debug "resp_command_id = ($resp_command_id); resp_command_name = (command_name = ([call logging::smpp_command_id_to_name $resp_command_id])); my_system_id = ($my_system_id)"     
-                    call logging::debug "Responding to client with bind response"      
+                    call logging::debug "resp_command_id = ($resp_command_id); resp_command_name = (command_name = ([call logging::smpp_command_id_to_name $resp_command_id])); my_system_id = ($my_system_id)" 
+                    call logging::debug "Responding to client with bind response"
 
                     TCP::respond [binary format IIIIa*x $response_message_length $resp_command_id 0 $sequence_number $my_system_id]
 
@@ -91,7 +92,7 @@ when CLIENT_DATA {
             }
 
             21 {                                    ;# enquire_link command
-                call logging::debug "Received enquire_link from peer ($peer_name).  Sending response."    
+                call logging::debug "Received enquire_link from peer ($peer_name).  Sending response."
                 TCP::respond [binary format IIII 16 0x80000015 0 $sequence_number]
             }
 
@@ -104,7 +105,7 @@ when CLIENT_DATA {
                 call logging::debug "Routing message to serverside"
                 binary scan $incoming_buf "c$command_length" binary_list
                 set message_data [binary format c* $binary_list]
-                GENERICMESSAGE::message create 
+                GENERICMESSAGE::message create
             }
         }
 
@@ -177,4 +178,3 @@ when GENERICMESSAGE_EGRESS {
         TCP::respond [GENERICMESSAGE::message data]
     }
 }
-
