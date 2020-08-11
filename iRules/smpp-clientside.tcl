@@ -1,5 +1,5 @@
 ltm rule smpp-clientside {
-    when RULE_INIT {
+when RULE_INIT {
     set static::smpp_config_elements_dg "smpp-config-elements"
 }
 
