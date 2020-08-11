@@ -274,4 +274,4 @@ Verify NTP is in sync
 <br/>   
 
 ### Next Step  
-[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](./procedures/2-Configure_BIG-IP_message_routing_proxy.md)
+[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/procedures/2-Configure_BIG-IP_message_routing_proxy.md)
