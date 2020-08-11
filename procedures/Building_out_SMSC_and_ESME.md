@@ -264,10 +264,9 @@ Verify NTP is in sync
     go run . run smscs $HOME/esme-bind-through-bigip-passthru.yaml
     ```  
 
-    #### - or -  
+    ### - or -  
 
     ```
     go run . run smscs $HOME/esme-bind-to-bigip-VIPs.yaml
     ```   
 
-    
