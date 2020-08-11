@@ -144,7 +144,7 @@ Verify NTP is in sync
     address 10.1.30.55
     netmask 255.255.255.0
     ```
-2.  Create the `smscs.yaml` file that will be used to activate the `smppth` test harness.  [smscs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/smscs.yaml)  
+2.  Create the `smscs.yaml` file that will be used to activate the `smppth` test harness.  [Link to smscs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/smscs.yaml)  
     ```
     vi $HOME/smscs.yaml
     ```  
@@ -174,12 +174,12 @@ Verify NTP is in sync
     ```  
 
 3.  Start the SMSC's  
-```
-cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
-```  
-```
-go run . run smscs $HOME/smscs.yaml
-```  
+    ```
+    cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+    ```  
+    ```
+    go run . run smscs $HOME/smscs.yaml
+    ```  
 
 
 <br/>  
@@ -190,52 +190,61 @@ go run . run smscs $HOME/smscs.yaml
 
     __Note:__  We are using secondary IP addresses for the SMSC Simulated servers.  We will bind the Simulated SMSC servers to the secondary IP addresses.  
 
-```
-@esme-host:~$ cat /etc/network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
+    ```
+    @esme-host:~$ cat /etc/network/interfaces
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
 
-source /etc/network/interfaces.d/*
+    source /etc/network/interfaces.d/*
 
-# The loopback network interface
-auto lo
-iface lo inet loopback
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
 
-# The primary network interface
-# Interface ens160 is the server's management address
-auto ens160
-iface ens160 inet static
-address 192.168.2.54
-netmask 255.255.255.0
-gateway 192.168.2.1
-dns-nameservers 8.8.8.8
+    # The primary network interface
+    # Interface ens160 is the server's management address
+    auto ens160
+    iface ens160 inet static
+    address 192.168.2.54
+    netmask 255.255.255.0
+    gateway 192.168.2.1
+    dns-nameservers 8.8.8.8
 
-auto ens192
-iface ens192 inet static
-address 10.1.50.99
-netmask 255.255.255.0
-post-up route add -net 10.1.20.0 netmask 255.255.255.0 gw 10.1.50.254
-post-up route add -net 10.1.30.0 netmask 255.255.255.0 gw 10.1.50.254
+    auto ens192
+    iface ens192 inet static
+    address 10.1.50.99
+    netmask 255.255.255.0
+    post-up route add -net 10.1.20.0 netmask 255.255.255.0 gw 10.1.50.254
+    post-up route add -net 10.1.30.0 netmask 255.255.255.0 gw 10.1.50.254
 
-auto ens192:1
-iface ens192:1 inet static
-address 10.1.50.100
-netmask 255.255.255.0
+    auto ens192:1
+    iface ens192:1 inet static
+    address 10.1.50.100
+    netmask 255.255.255.0
 
-auto ens192:2
-iface ens192:2 inet static
-address 10.1.50.105
-netmask 255.255.255.0
+    auto ens192:2
+    iface ens192:2 inet static
+    address 10.1.50.105
+    netmask 255.255.255.0
 
-auto ens192:3
-iface ens192:3 inet static
-address 10.1.50.110
-netmask 255.255.255.0
+    auto ens192:3
+    iface ens192:3 inet static
+    address 10.1.50.110
+    netmask 255.255.255.0
 
-auto ens192:4
-iface ens192:4 inet static
-address 10.1.50.115
-netmask 255.255.255.0
-```  
+    auto ens192:4
+    iface ens192:4 inet static
+    address 10.1.50.115
+    netmask 255.255.255.0
+    ```  
 
-2.  Create the `smscs.yaml` file that will be used to activate the `smppth` test harness.  [Link to smscs.yaml file](yaml_files/smscs.yaml) 
+2.  Create the `emse` yaml file that will be used to activate the `smppth` test harness.  In this example I have provided two `emse` yaml files, `esme-bind-through-bigip-passthru.yaml` and `esme-bind-to-bigip-VIPs.yaml`  
+
+    - `esme-bind-through-bigip-passthru.yaml` is configured to use BIG-IP as a passthru, the BIG-IP would be configured with a catch all fastl4 vip.  In this case the ESME's will bind directly to the SMSC's and __NOT__ a BIG-IP VIP.  This esme configuration would be used just to verify that your SMPP environment is configured correctly.  
+
+        [Link to esme-bind-through-bigip-passthru.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/esme-bind-through-bigip-passthru.yaml)  
+        
+        ```
+        vi $HOME/esme-bind-through-bigip-passthru.yaml
+        ```  
+    
