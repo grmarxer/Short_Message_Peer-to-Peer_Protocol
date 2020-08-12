@@ -172,14 +172,7 @@ Verify NTP is in sync
         BindPassword: passwd2
         BindSystemID: smsc-01-02
     ```  
-
-3.  Start the SMSC's  
-    ```
-    cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
-    ```  
-    ```
-    go run . run smscs $HOME/smscs.yaml
-    ```  
+3.  We will start the SMSC servers once the BIG-IP is configured
 
 
 <br/>  
@@ -256,19 +249,7 @@ Verify NTP is in sync
         vi $HOME/esme-bind-to-bigip-VIPs.yaml
         ```  
     
-3.  Start the EMSE RCS Clients
-    ```
-    cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
-    ```  
-    ```
-    go run . run esmes $HOME/esme-bind-through-bigip-passthru.yaml
-    ```  
-
-    ### - or -  
-
-    ```
-    go run . run esmes $HOME/esme-bind-to-bigip-VIPs.yaml
-    ```   
+3.  We will start the `esme` clients once the BIG-IP is configured
 
 
 <br/>   
