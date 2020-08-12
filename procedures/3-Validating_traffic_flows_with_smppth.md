@@ -2,6 +2,7 @@
 
 ### Summary  
 
+In this step you will use smppth to bind the SMSC and ESME handlers to the BIG-IP, send enquire-links, send submit-sm messages, and send messages from SMSC to ESME using short-code routing.  
 
 <br/>   
 
@@ -110,9 +111,9 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     Notice that the response to this submit-sm comes from the other member of cluster01.  Again, check the SMSC UI and validate that the submit-sm arrived, and a submit-sm-resp was sent.  
 <br/>   
 
-5. Send messages from SMSC to ESME using short code for routing  
+5. Send messages from SMSC to ESME using short-code for routing  
 
-    If an SMSC sets the destination_addr field of a submit-sm, and it matches a short code associated with an rcs cluster (BIG-IP data-group smpp-shortcode-routing), the submit-sm will be load-balanced to the matching rcs cluster, using round robin.  To demonstrate this, from the SMSC UI:  
+    If an SMSC sets the destination_addr field of a submit-sm, and it matches a short-code associated with an rcs cluster (BIG-IP data-group smpp-shortcode-routing), the submit-sm will be load-balanced to the matching rcs cluster, using round robin.  To demonstrate this, from the SMSC UI:  
 
     On the SMSC handler, enter the following command in the `Enter Command>` entry box  
     ```
@@ -141,7 +142,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 
     ![cluster01-smsc01-send-submit-sm-destination_addr--11211-short_message-message-03-number-2](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/cluster01-smsc01-send-submit-sm-destination_addr--11211-short_message-message-03-number-2.png) 
 
-    Try sending a submit-sm to the other short code `33433` that we have configured in the BIG-IP `smpp-shortcode-routing` data-group  
+    Try sending a submit-sm to the other short-code `33433` that we have configured in the BIG-IP `smpp-shortcode-routing` data-group  
 
     On the SMSC handler, enter the following command in the `Enter Command>` entry box  
     ```
@@ -153,4 +154,4 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     ![cluster01-smsc02-send-submit-sm-destination_addr--3433-short_message-message-05](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/cluster01-smsc02-send-submit-sm-destination_addr--3433-short_message-message-05.png)
 
 
-    #### This demonstrates proper short code based routing from SMSCs to ESMEs.  
+    #### This demonstrates proper short-code based routing from SMSCs to ESMEs.  
