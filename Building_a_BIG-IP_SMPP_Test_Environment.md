@@ -80,7 +80,7 @@ The BIG-IP can either use per-message load-balancing, or via additional iRules, 
 
 ### Solution Environment  
 
-The solution simulates up to four ESMEs, organized into two clusters, and up to four SMSCs, organized into two clusters.  The simulated ESME's are running on a single Ubuntu server called ESME-Host.  The simulated SMSC's are running on a single ubunut server called SMSC-Host.  The ESME clusters are called “rcs” clusters.  This is because the PoC upon which this solution was built routed messages between Rich Communications Servers (RCS) acting as ESMEs toward several geographically distinct groups of SMSCs.  
+The solution simulates up to four ESMEs, organized into two clusters, and up to four SMSCs, organized into two clusters.  The simulated ESME's are running on a single Ubuntu server called ESME-Host.  The simulated SMSC's are running on a single ubunut server called SMSC-Host.  The ESME clients are also referred to as "RCS" clients.  This is because the POC upon which this solution was built routed messages between Rich Communications Servers (RCS) acting as ESMEs toward several geographically distinct groups of SMSCs.  
 
 <br/>   
 
