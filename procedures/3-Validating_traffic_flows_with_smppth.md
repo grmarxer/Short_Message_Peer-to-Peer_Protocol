@@ -35,6 +35,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     ![SMSC startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/smsc_go_run.PNG)
 
 
+<br/>   
 
 2. Start ESME agent handler  (ESME-Host-Server)
 
@@ -49,7 +50,8 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 
     ![EMSE startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/esme_go_run.PNG)  
 
-    Together, these demonstrate that the bind function is independent on the two sides (i.e., the ESME-side and the SMSC-side) of the BIG-IP.  
+    #### Together, these demonstrate that the bind function is independent on the two sides (i.e., the ESME-side and the SMSC-side) of the BIG-IP.  
+<br/>   
 
 3. Send enquire-link commands  
 
@@ -75,6 +77,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 
     #### This demonstrates that enquire-links are terminated on the BIG-IP.
 
+<br/>   
 
 4.  Send submit-sm messages from ESMEs to SMSCs  
 
@@ -105,6 +108,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     ![rcs02-tp01-send-submit-sm-to-cluster01-vs-short_message--message-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs02-tp01-send-submit-sm-to-cluster01-vs-short_message--message-02.png)  
 
     Notice that the response to this submit-sm comes from the other member of cluster01.  Again, check the SMSC UI and validate that the submit-sm arrived, and a submit-sm-resp was sent.  
+<br/>   
 
 5. Send messages from SMSC to ESME using short code for routing  
 
