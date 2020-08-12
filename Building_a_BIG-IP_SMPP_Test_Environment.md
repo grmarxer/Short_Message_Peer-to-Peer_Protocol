@@ -104,5 +104,5 @@ This demo utilizes an SMPP test harness called smppth.  It is open-source and is
 <br/>   
 
 ### Next Step  
-[Building out the SMSC and EMSE Servers](procedures/1-Building_out_SMSC_and_ESME.md)
+[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](procedures/1-Configure_BIG-IP_message_routing_proxy.md)
 

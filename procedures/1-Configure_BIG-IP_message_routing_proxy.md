@@ -1,4 +1,4 @@
-( Previous Step: [Building out the SMSC and EMSE Servers](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/procedures/1-Building_out_SMSC_and_ESME.md) )  
+( Previous Step: [Building a BIG-IP SMPP Test Environment Overview](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/Building_a_BIG-IP_SMPP_Test_Environment.md) )  
 
 ### Summary  
 
@@ -85,10 +85,7 @@
         tmsh modify ltm message-routing generic peer peer-smsc-cluster01 auto-initialization enabled auto-initialization-interval 2000
         tmsh save sys config
         ```  
+<br/>   
 
-13.  Start the SMSC's  (SMSC-Host)  
-
-
-    
-14.  Start the EMSE RCS Clients (ESME-Host)  
-
+### Next Step  
+[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](procedures/1-Configure_BIG-IP_message_routing_proxy.md)
