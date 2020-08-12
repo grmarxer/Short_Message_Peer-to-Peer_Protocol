@@ -143,7 +143,7 @@ In this step you will perform the following:
     address 10.1.30.55
     netmask 255.255.255.0
     ```
-2.  Create the `smscs.yaml` file that will be used to activate the smppth test harness.  [Link to smscs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/smscs.yaml)  
+2.  Create the `smscs.yaml` file that will be used to activate the SMSC handlers.  [Link to smscs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/smscs.yaml)  
     ```
     vi $HOME/smscs.yaml
     ```  
@@ -230,13 +230,11 @@ In this step you will perform the following:
     netmask 255.255.255.0
     ```  
 
-2.  Create the `esme-bind-to-bigip-vip.yaml` file that will be used to activate the smppth test harness.    
-  
-    - `esme-bind-to-bigip-vip.yaml` is configured for the ESME's to two BIG-IP VIPs, vs-smpp-toward-smsc-cluster01 and vs-smpp-toward-smsc-cluster02.  [Link to esme-bind-to-bigip-vip.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/esme-bind-to-bigip-vip.yaml)  
+2.  Create the `esme-bind-to-bigip-vip.yaml` file that will be used to activate the ESME handlers and bind to two BIG-IP VIPs, vs-smpp-toward-smsc-cluster01 and vs-smpp-toward-smsc-cluster02.  [Link to esme-bind-to-bigip-vip.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/esme-bind-to-bigip-vip.yaml)  
         
-        ```
-        vi $HOME/esme-bind-to-bigip-vip.yaml
-        ```  
+    ```
+    vi $HOME/esme-bind-to-bigip-vip.yaml
+    ```  
     
 
 
