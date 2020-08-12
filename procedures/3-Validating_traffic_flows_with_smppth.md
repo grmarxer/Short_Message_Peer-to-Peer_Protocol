@@ -45,6 +45,21 @@ cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
 go run . run esmes $HOME/esme-bind-to-bigip-vip.yaml
 ```   
 
-If the ESME clients started and bound to the BIG-IP VIPs correctly you will see the following
+Once again, wait until the UI reports that the ESMEs have completed their binds (which happens because the YAML file instructs them to do so):  
 
-![EMSE startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/esme_go_run.PNG)
+![EMSE startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/esme_go_run.PNG)  
+
+Together, these demonstrate that the bind function is independent on the two sides (i.e., the ESME-side and the SMSC-side) of the BIG-IP.  
+
+3. Send enquire-link commands  
+
+On the ESME handler, enter the following command in the `Enter Command>` entry box  
+```
+rcs01-tp01: send enquire-link to cluster01-vs
+```  
+
+In the Event Output box, you should see a notice that the enquire-link was sent and that an enquire-link-resp was received.  
+
+![rcs01-tp01: send enquire-link to cluster01-vs](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-enquire-link-to-cluster01-vs.PNG)  
+
+Switch to the SMSC UI and note that the enquire-link does __NOT__ appear there.
