@@ -88,7 +88,7 @@ Verify NTP is in sync
 
 <br/>  
 
-### Building out the SMSC Host server  
+### Configuring the SMSC Host server  
 
 1.  Configure the `/etc/network/interfaces` file to match this environment; ens192 will be used for `smsc-net1` and ens224 will be used for `smsc-net2`  
 
@@ -172,12 +172,12 @@ Verify NTP is in sync
         BindPassword: passwd2
         BindSystemID: smsc-01-02
     ```  
-3.  We will start the SMSC servers once the BIG-IP is configured
+
 
 
 <br/>  
 
-### Building out the RCS ESME clients  
+### Configuring RCS ESME clients  
 
 1.  Configure the `/etc/network/interfaces` file to match this environment; ens192 will be used for `esme-net1`  
 
@@ -249,7 +249,7 @@ Verify NTP is in sync
         vi $HOME/esme-bind-to-bigip-vip.yaml
         ```  
     
-3.  We will start the `esme` clients once the BIG-IP is configured
+
 
 
 <br/>   
