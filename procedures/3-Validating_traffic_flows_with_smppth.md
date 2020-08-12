@@ -87,4 +87,5 @@ rcs01-tp01: send submit-sm to cluster01-vs short_message="message 01"
 ```  
 Notice in the Events Output that a submit-sm was sent, and a submit-sm-resp was received.  The test harness automatically inserts the name of the peer that sent the submit-sm-resp in the response message_id field.  The response should have come from either cluster01-smsc01 or cluster01-smsc02, since the request was forwarded to cluster01.
 
-![rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01.PNG)  
+![rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01.png)  
+
