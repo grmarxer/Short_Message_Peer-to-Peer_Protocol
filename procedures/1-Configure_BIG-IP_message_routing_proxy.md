@@ -88,4 +88,5 @@
 <br/>   
 
 ### Next Step  
-[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](procedures/1-Configure_BIG-IP_message_routing_proxy.md)
+
+[Build out the ESME and SMSC Host Servers](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/procedures/2-Building_out_SMSC_and_ESME.md)

@@ -1,4 +1,4 @@
-( Previous Step: [Building a BIG-IP SMPP Test Environment](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/Building_a_BIG-IP_SMPP_Test_Environment.md) )  
+( Previous Step: [Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/procedures/1-Configure_BIG-IP_message_routing_proxy.md) )  
 
 ### Summary  
 
@@ -255,4 +255,5 @@ Verify NTP is in sync
 <br/>   
 
 ### Next Step  
-[Configuring BIG-IP as a SMPPv3.4 Message Routing Proxy](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/procedures/2-Configure_BIG-IP_message_routing_proxy.md)
+
+[Validating ESME and SMSC traffic flows with smppth](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/procedures/3-Validating_traffic_flows_with_smppth.md)
