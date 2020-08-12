@@ -86,3 +86,30 @@
         tmsh save sys config
         ```  
 
+13.  Start the SMSC's  (SMSC-Host)  
+
+        ```
+        cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+        ```  
+        ```
+        go run . run smscs $HOME/smscs.yaml
+        ```  
+
+
+        If the SMSC server started and bound with the BIG-IP correctly you will see the following  
+
+
+        ![SMSC startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/smsc_go_run.PNG)
+    
+14.  Start the EMSE RCS Clients (ESME-Host)  
+
+        ```
+        cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+        ```  
+        ```
+        go run . run esmes $HOME/esme-bind-to-bigip-VIPs.yaml
+        ```   
+
+        If the ESME clients started and bound to the BIG-IP VIPs correctly you will see the following
+
+        ![EMSE startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/esme_go_run.PNG)
