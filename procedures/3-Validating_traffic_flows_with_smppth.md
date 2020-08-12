@@ -62,4 +62,29 @@ In the Event Output box, you should see a notice that the enquire-link was sent 
 
 ![rcs01-tp01: send enquire-link to cluster01-vs](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-enquire-link-to-cluster01-vs.PNG)  
 
-Switch to the SMSC UI and note that the enquire-link does __NOT__ appear there.
+Switch to the SMSC UI and note that the enquire-link does __NOT__ appear there.  
+
+Send an enquire-link from one of the SMSC agents using the SMSC UI:  
+
+On the SMSC handler, enter the following command in the `Enter Command>` entry box  
+```
+cluster01-smsc01: send enquire-link to bigip01
+```  
+
+Once again, you should note the enquire-link go out and an enquire-link-resp come back.  If you look at the ESME UI, there is no corresponding enquire-link received.
+
+This demonstrates that enquire-links are terminated on the BIG-IP.
+
+
+4.  Send submit-sm messages from ESMEs to SMSCs  
+
+Recall that, when an ESME sends a request to the cluster01 Virtual Server, it is delivered to SMSC cluster01, using round-robin on a per-message basis.  
+Send a submit-sm from an ESME to the cluster01 VS, using the ESMEs UI:  
+
+On the ESME handler, enter the following command in the `Enter Command>` entry box  
+```
+rcs01-tp01: send submit-sm to cluster01-vs short_message="message 01"
+```  
+Notice in the Events Output that a submit-sm was sent, and a submit-sm-resp was received.  The test harness automatically inserts the name of the peer that sent the submit-sm-resp in the response message_id field.  The response should have come from either cluster01-smsc01 or cluster01-smsc02, since the request was forwarded to cluster01.
+
+![rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01.PNG)  
