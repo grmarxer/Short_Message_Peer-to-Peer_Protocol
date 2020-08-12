@@ -231,7 +231,7 @@ Verify NTP is in sync
     netmask 255.255.255.0
     ```  
 
-2.  Create the `emse` yaml file that will be used to activate the `smppth` test harness.  In this example I have provided two `emse` yaml files, `esme-bind-through-bigip-passthru.yaml` and `esme-bind-to-bigip-VIPs.yaml`  
+2.  Create the `emse` yaml file that will be used to activate the `smppth` test harness.  In this example I have provided two `emse` yaml files, `esme-bind-through-bigip-passthru.yaml` and `esme-bind-to-bigip-vip.yaml`  
 
     - `esme-bind-through-bigip-passthru.yaml` is configured to use BIG-IP as a passthru, the BIG-IP would be configured with a catch all fastl4 vip.  In this case the ESME's will bind directly to the SMSC's and __NOT__ a BIG-IP VIP.  This esme configuration would be used just to verify that your SMPP environment is configured correctly.  
 
@@ -241,12 +241,12 @@ Verify NTP is in sync
         vi $HOME/esme-bind-through-bigip-passthru.yaml
         ```  
     
-    - `esme-bind-to-bigip-VIPs.yaml` is configured so the ESME's bind to BIG-IP VIP's, in this example there are two BIG-IP VIPs `vs-smpp-toward-smsc-cluster01` and `vs-smpp-toward-smsc-cluster02`.  The BIG-IP configuration will be provided in a later procedure.  In this case the ESME's and SMSC's will use BIG-IP as a message routing proxy for SMPP v3.4.  
+    - `esme-bind-to-bigip-vip.yaml` is configured so the ESME's bind to BIG-IP VIP's, in this example there are two BIG-IP VIPs `vs-smpp-toward-smsc-cluster01` and `vs-smpp-toward-smsc-cluster02`.  The BIG-IP configuration will be provided in a later procedure.  In this case the ESME's and SMSC's will use BIG-IP as a message routing proxy for SMPP v3.4.  
 
-        [Link to esme-bind-to-bigip-VIPs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/esme-bind-to-bigip-VIPs.yaml)  
+        [Link to esme-bind-to-bigip-vip.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/esme-bind-to-bigip-vip.yaml)  
         
         ```
-        vi $HOME/esme-bind-to-bigip-VIPs.yaml
+        vi $HOME/esme-bind-to-bigip-vip.yaml
         ```  
     
 3.  We will start the `esme` clients once the BIG-IP is configured

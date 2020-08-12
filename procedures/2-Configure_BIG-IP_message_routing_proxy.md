@@ -44,7 +44,7 @@
     - Create the `smpp-serverside` iRule with the following contents [smpp-serverside](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/iRules/smpp-serverside.tcl)  
   
 
-5.  Create the SMSC Pools  
+5.  Create the SMSC Server Pools  
     ```
     tmsh create ltm pool pool-smscs-cluster01 { members add { cluster01-smsc01:smpp { address 10.1.20.50 } cluster01-smsc02:smpp { address 10.1.20.55  } } monitor gateway_icmp }
     tmsh create ltm pool pool-smscs-cluster02 { members add { cluster02-smsc01:smpp { address 10.1.30.50 } cluster02-smsc02:smpp { address 10.1.30.55 } } monitor gateway_icmp }
@@ -88,28 +88,7 @@
 
 13.  Start the SMSC's  (SMSC-Host)  
 
-        ```
-        cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
-        ```  
-        ```
-        go run . run smscs $HOME/smscs.yaml
-        ```  
 
-
-        If the SMSC server started and bound with the BIG-IP correctly you will see the following  
-
-
-        ![SMSC startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/smsc_go_run.PNG)
     
 14.  Start the EMSE RCS Clients (ESME-Host)  
 
-        ```
-        cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
-        ```  
-        ```
-        go run . run esmes $HOME/esme-bind-to-bigip-VIPs.yaml
-        ```   
-
-        If the ESME clients started and bound to the BIG-IP VIPs correctly you will see the following
-
-        ![EMSE startup](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/esme_go_run.PNG)
