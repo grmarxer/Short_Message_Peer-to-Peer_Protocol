@@ -15,7 +15,7 @@ In both cases the smppth user-interface looks like the following:
 
 
 As you can see, there are three boxes: a Command History box, a Command Entry box, and an Events Output box.  Initially, the Command Entry box has focus.  Instructions can be given to the SMPP agents controlled by the associated instance UI by entering text command here, then pressing <enter>.  Any line entered here is appended to the Command History.  Any events involving the controlled agents – or the application itself – generate output in the Events Output box.  Hitting tab cycles focus between the three boxes.  In the Command History Box and the Events box, the arrow keys can be used to scroll backward and forward in the output text in the box.  The Command Entry box supports a subset of readline, including ^a, ^e, ^k, and the up- and down-arrows for command history.  
-
+<br/>   
 
 ### Using smppth to Validate traffic flows 
 
@@ -73,7 +73,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 
     Once again, you should note the enquire-link go out and an enquire-link-resp come back.  If you look at the ESME UI, there is no corresponding enquire-link received.
 
-    This demonstrates that enquire-links are terminated on the BIG-IP.
+    #### This demonstrates that enquire-links are terminated on the BIG-IP.
 
 
 4.  Send submit-sm messages from ESMEs to SMSCs  
@@ -149,4 +149,4 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     ![cluster01-smsc02-send-submit-sm-destination_addr--3433-short_message-message-05](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/cluster01-smsc02-send-submit-sm-destination_addr--3433-short_message-message-05.png)
 
 
-    This demonstrates proper short code based routing from SMSCs to ESMEs.  
+    #### This demonstrates proper short code based routing from SMSCs to ESMEs.  
