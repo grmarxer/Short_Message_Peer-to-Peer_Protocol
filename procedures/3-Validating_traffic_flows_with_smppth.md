@@ -89,3 +89,19 @@ Notice in the Events Output that a submit-sm was sent, and a submit-sm-resp was 
 
 ![rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01.png)  
 
+
+Check the SMSC UI.  You should see the submit-sm request come in, and the submit-sm-resp go out:  
+
+![smsc-response-to-rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/smsc-response-to-rcs01-tp01-send-submit-sm-to-cluster01-vs-short_message--message-01.png)  
+
+Send a second submit-sm on the ESME handler, from a different rcs cluster:  
+
+```
+rcs02-tp01: send submit-sm to cluster01-vs short_message="message 02"
+```  
+
+![rcs02-tp01-send-submit-sm-to-cluster01-vs-short_message--message-02](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs02-tp01-send-submit-sm-to-cluster01-vs-short_message--message-02.png)  
+
+Notice that the response to this submit-sm comes from the other member of cluster01.  Again, check the SMSC UI and validate that the submit-sm arrived, and a submit-sm-resp was sent.  
+
+
