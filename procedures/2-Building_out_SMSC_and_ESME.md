@@ -14,7 +14,7 @@ In this step you will perform the following:
 
 1. Create two Ubuntu VM's using v16.04 to act as the EMSE host and the SMSC host.  The SMSC host server should have a minimum of three NICs (mgmt, smsc-net1, and smsc-net2).  The ESME host server should have a minimum of two NICs (mgmt and esme-net1)
 
-2. Make sure you are running Ubuntu 16.04 on your Kube nodes  
+2. Make sure you are running Ubuntu 16.04
 ```lsb_release -a```
 
 3. Update Ubuntu  
@@ -27,8 +27,7 @@ In this step you will perform the following:
 5. selinux is not installed by default
 ```sestatus``` should fail  
 
-6. NTP installed by default  
-Verify NTP is in sync  
+6. NTP installed by default -- Verify NTP is in sync  
 ```timedatectl```  
 
 7.  The SMPP library that we will use is built in the `go` language.  We need to install `go` v1.14.4  
