@@ -96,6 +96,9 @@ In this step you will perform the following:
         cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
         ```  
         ```
+        go run .
+        ```  
+        ```
         @SMSC-Host:~/go/src/github.com/blorticus/smppth/apps/smpp-test-harness$ go run .
         smpp-test-harness run esmes|smscs <config_yaml_file>
         exit status 1
