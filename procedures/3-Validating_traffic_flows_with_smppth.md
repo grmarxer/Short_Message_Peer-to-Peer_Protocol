@@ -66,7 +66,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     ![rcs01-tp01: send enquire-link to cluster01-vs](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/rcs01-tp01-send-enquire-link-to-cluster01-vs.PNG)  
 
     Switch to the SMSC UI and note that the enquire-link does __NOT__ appear there.  
-
+<br/>   
     Send an enquire-link from one of the SMSC agents using the SMSC UI:  
 
     On the SMSC handler, enter the following command in the `Enter Command>` entry box  
