@@ -166,35 +166,10 @@ In this step you will perform the following:
     ```
     sudo systemctl restart networking
     ```  
-2.  Create the `smscs.yaml` file that will be used to activate the SMSC handlers.  [Link to smscs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/smscs.yaml)  
+2.  Create the `smscs.yaml` file that will be used to activate the SMSC handlers with the following content [Link to smscs.yaml file](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/yaml_files/smscs.yaml).  
     ```
     vi $HOME/smscs.yaml
     ```  
-    ```
-    ---
-    SMSCs:
-    - Name: cluster01-smsc01
-        IP: 10.1.20.50
-        Port: 2775
-        BindPassword: passwd1
-        BindSystemID: smsc-01-01
-    - Name: cluster01-smsc02
-        IP: 10.1.20.55
-        Port: 2775
-        BindPassword: passwd1
-        BindSystemID: smsc-02-02
-    - Name: cluster02-smsc01
-        IP: 10.1.30.50
-        Port: 2775
-        BindPassword: passwd2
-        BindSystemID: smsc-02-01
-    - Name: cluster02-smsc02
-        IP: 10.1.30.55
-        Port: 2775
-        BindPassword: passwd2
-        BindSystemID: smsc-01-02
-    ```  
-
 
 
 <br/>  
