@@ -34,6 +34,18 @@ In this step you will perform the following:
 
 6. NTP installed by default -- Verify NTP is in sync  
 ```timedatectl```  
+    ```diff
+    @smsc:~$ timedatectl
+        Local time: Thu 2020-08-13 10:24:39 PDT
+    Universal time: Thu 2020-08-13 17:24:39 UTC
+            RTC time: Thu 2020-08-13 17:24:39
+        Time zone: America/Los_Angeles (PDT, -0700)
+    Network time on: yes
+    -NTP synchronized: yes
+    RTC in local TZ: no
+    ```  
+
+
 
 7.  The SMPP library that we will use is built in the `go` language.  We need to install `go` v1.14.4  
     ```
