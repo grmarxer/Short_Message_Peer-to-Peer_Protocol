@@ -19,7 +19,8 @@ In this step you will perform the following:
 
 3. Update Ubuntu  
 ```apt-get update -y```  
-```apt-get upgrade -y```
+```apt-get upgrade -y```  
+```reboot```  
 
 4. Disable firewall ubuntu  
 ```ufw disable```
