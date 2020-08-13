@@ -67,7 +67,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 
     Switch to the SMSC UI and note that the enquire-link does __NOT__ appear there.  
     <br/>   
-    
+
     Send an enquire-link from one of the SMSC agents using the SMSC UI:  
 
     On the SMSC handler, enter the following command in the `Enter Command>` entry box  
@@ -138,7 +138,7 @@ The following is a detailed, step-by-step script for the demonstrating this solu
     cluster01-smsc01: send submit-sm to bigip01 destination_addr=11211 short_message="message 03"
     ```  
 
-    You should now see a response from the other rcs cluster member:  
+    You should now see a response from the other RCS cluster member:  
 
 
     ![cluster01-smsc01-send-submit-sm-destination_addr--11211-short_message-message-03-number-2](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/illustrations/cluster01-smsc01-send-submit-sm-destination_addr--11211-short_message-message-03-number-2.png) 
