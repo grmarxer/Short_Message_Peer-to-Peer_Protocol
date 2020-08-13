@@ -40,5 +40,4 @@ proc smpp_command_id_to_name {command_id} {
         return $command_id
     }
 }
-}
 
