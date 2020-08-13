@@ -16,8 +16,14 @@ __Note:__ This procedure assumes you already have a BIG-IP instantiated, license
 1. Disable strict password policy enforcement (Optional)  
     ```
     tmsh modify auth password-policy policy-enforcement disabled
+    ```  
+    ```
     tmsh modify auth password root
+    ```  
+    ```
     tmsh modify auth password admin
+    ```  
+    ```
     tmsh save sys config
     ```  
 
