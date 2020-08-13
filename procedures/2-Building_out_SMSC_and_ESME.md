@@ -18,12 +18,16 @@ In this step you will perform the following:
 ```lsb_release -a```
 
 3. Update Ubuntu  
-```apt-get update -y```  
-```apt-get upgrade -y```  
-```reboot```  
+```sudo apt-get update -y```  
+```sudo apt-get upgrade -y```  
+```sudo reboot```  
 
 4. Disable firewall ubuntu  
-```ufw disable```
+```sudo ufw disable```  
+    ```
+    @smsc:~$ sudo ufw status
+    Status: inactive
+    ```  
 
 5. selinux is not installed by default
 ```sestatus``` should fail  
