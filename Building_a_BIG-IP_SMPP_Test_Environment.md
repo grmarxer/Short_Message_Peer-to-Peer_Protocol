@@ -24,8 +24,8 @@ The Short-Messaging Peer-to-Peer Protocol (SMPP) is a family of related protocol
 SMPP 3.4 has two main elements: an External Short Message Entity (ESME, usually pronounced "ez-mee") and a Short Message Service Center (SMSC, usually spelled out, as in "ess - emm - ess - sea").  In general, the ESME is a proxy operating on behalf of actual systems that send and receive messages (e.g., mobile devices), while the SMSC provides endpoint routing, and may also act as a store-and-forward system.  When an SMSC operates in store-and-forward mode, the ESMEs may query the SMSC to determine whether a message has yet been delivered and can cancel messages that are not yet delivered.  EMSEs act as a client and SMSCs act as a server, but messages can flow in either direction, depending on the bind type.  SMPP messages are carried over IP, using TCP for transport.  An ESME always initiates the TCP connection, and when the remote end connects, the ESME sends an SMPP message of the type bind request.  The receiving SMSC responds with a bind response message.  Together, the bind request and response establish an SMPP session between the two peers.  The bind request contains one of the following bind types:  
 
 - transmitter bind - the EMSE will send messages to the SMSC on this transport;  
-- bind - the ESME will receive messages from the SMSC on this transport;  
-- bind - the EMSE will send and receive messages from the SMSC on this transport.  
+- receiver bind - the ESME will receive messages from the SMSC on this transport;  
+- transceiver bind - the EMSE will send and receive messages from the SMSC on this transport.  
 
 As such, an ESME will either open both a transmitter and receiver bound flow toward the SMSC, or the ESME will open a transceiver bound flow toward the SMSC.  
 
