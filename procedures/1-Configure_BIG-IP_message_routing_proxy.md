@@ -4,8 +4,6 @@
 
 In this step you will configure BIG-IP to support SMPP v3.4 Message Routing.  The BIG-IP will sit between the EMSE (RCS) clients and SMSC servers proxying SMPP v3.4 messages.  In our setup we have two EMSE (RCS) clusters and two SMSC clusters.  The ESME (RCS) client clusters will be bound in a full mesh with each SMSC cluster via two BIG-IP Virtual Servers.  This configuration also supports SMSC to ESME short message code routing.  In this example we have two short message codes configured for routing in a BIG-IP data-group, `11211` and `33433`.  
 
-For a more detailed explanation of the BIG-IP configuration please refer to the [following.](https://github.com/grmarxer/Short_Message_Peer-to-Peer_Protocol/blob/master/reference_documents/SMPP_Proxy_MRF.docx)  
-
 
 __Note:__ This procedure assumes you already have a BIG-IP instantiated, licensed, and running v13.1.3.4  
 
