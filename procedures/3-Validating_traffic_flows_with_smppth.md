@@ -25,11 +25,9 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 1. Start SMSC agent handler (SMSC-Host-Server)
 
     ```
-    cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+    ./smpp-terminal-test-harness run smscs /path/to/config.yaml
     ```  
-    ```
-    go run . run smscs $HOME/smscs.yaml
-    ```  
+
 
     This will start the smpp-test-harness UI.  Wait a moment until you see messages in the Event Output Box that shows bind sessions (this happens automatically because the SMSC peers are set to auto-initialization).  
 
@@ -41,11 +39,9 @@ The following is a detailed, step-by-step script for the demonstrating this solu
 2. Start ESME agent handler  (ESME-Host-Server)
 
     ```
-    cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+    ./smpp-terminal-test-harness run esmes /path/to/config.yaml
     ```  
-    ```
-    go run . run esmes $HOME/esme-bind-to-bigip-vip.yaml
-    ```   
+
 
     Once again, wait until the UI reports that the ESMEs have completed their binds (which happens because the YAML file instructs them to do so):  
 
