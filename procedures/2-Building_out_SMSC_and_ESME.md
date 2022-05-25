@@ -91,18 +91,25 @@ In this step you will perform the following:
         ```
         go get github.com/blorticus/smppth
         ```  
-12.  Verify that the SMPP Test Harness `smppth` is working properly  
+12.  Use this procedure to build out and use the __SMPP Test harness__  --  https://github.com/blorticus/smpp-terminal-test-harness     
+
+        In order to build this application:  
+
         ```
-        cd $GOPATH/src/github.com/blorticus/smppth/apps/smpp-test-harness
+        mkdir ~/git
+        cd ~/git
+        git clone https://github.com/blorticus/smpp-terminal-test-harness.git
+        cd smpp-teerminal-test-harness
+        go get -u github.com/blorticus/smpp github.com/blorticus/tpcli github.com/blorticus/smppth
+        go build -o smpp-terminal-test-harness .
         ```  
+
+        To run the executable:  
+        
         ```
-        go run .
+        ./smpp-terminal-test-harness run esmes|smscs /path/to/config.yaml
         ```  
-        ```
-        @SMSC-Host:~/go/src/github.com/blorticus/smppth/apps/smpp-test-harness$ go run .
-        smpp-test-harness run esmes|smscs <config_yaml_file>
-        exit status 1
-        ```  
+
 
 
 <br/>  
